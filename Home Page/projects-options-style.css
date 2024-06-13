@@ -108,93 +108,71 @@ nav li:first-child {
 }
 /*END OF SIDEBAR CODE*/
 
-.heading {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    font-size: 60px;
+#cards-body {
+    margin-top: 130px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
-.login-paragraph {
-    pointer: cursor;
-    font-size: 20px;
-    margin-bottom: 10px;
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 916px;
+    width: calc(100% - 20px);
 }
 
-.input {
-    margin-top: 10px;
-    margin-bottom: 30px;
-    padding: 15px 40px;
-    border: none;
-    outline: none;
-    color: var(--red);
+.card {
+    background-color: var(--darker-redish-pink);
+    border-radius: 10px;
+    height: 260px;
     position: relative;
-    z-index: 0;
-    border-radius: 12px;
+    width: 300px;
+    cursor: pointer;
 }
 
-.btn {
-  margin: 50px;
-  padding: 15px 40px;
-  border: none;
-  outline: none;
-  color: var(--red);
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 12px;
+.card:hover::before, 
+.card:hover > .card-border {
+    opacity: 1;
 }
 
-.btn::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: var(--dark-redish-pink);
-  left: 0;
-  top: 0;
-  border-radius: 10px;
+.card::before,
+.card > .card-border {
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y), rgba(149, 57, 81, 0.6), transparent 40%
+    );
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    transition: opacity 500ms;
+    width: 100%;
+    z-index: 2;
 }
 
-.btn::before {
-  content: "";
-  background-color: linear-gradient(45deg, #FF003C, #FF2D5E); /* Corrected typo */
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 600%;
-  z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  filter: blur(8px);
-  animation: glowing 20s linear infinite;
-  transition: opacity .3s ease-in-out;
-  border-radius: 10px;
-  opacity: 0;
+.card::before {
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y), rgba(149, 57, 81, 0.06), transparent 40%
+    );
+    z-index: 3;
 }
 
-@keyframes glowing {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
+.card > .card-border {
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y), rgba(149, 57, 81, 0.3), transparent 40%
+    );
+    z-index: 1;
 }
 
-.btn:hover::before {
-  opacity: 1;
+.card > .card-content {
+    background-color: var(--darkredish-pink);
+    border-radius: inherit;
+    height: calc(100% - 2px);
+    margin: 1px;
+    width: calc(100% - 2px);
+    z-index: 2;
 }
-
-.btn:active::after {
-  background: transparent;
-}
-
-.btn:active {
-  color: var(--red);
-  font-weight: bold;
-}
-/*END OF SIGNUP CODE*/
