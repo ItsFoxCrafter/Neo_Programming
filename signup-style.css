@@ -1,0 +1,236 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*END OF ESSENTIAL CODE*/
+
+:root {
+    --light-red: #FF2D5E;
+    --red: #FF003C;
+    --dark-red-purple: #200514; /*JUST PRETEND THAT THERE IS A COLOR WITH THAT NAME*/
+    --dark-redish-pink: #770030; /*AGAIN JUST PRETEND, IM NOT SURE IF THERE A COLOR LIKE THAT IDK*/
+    --darker-redish-pink: #500020; /*PRETEND AGAIN PLS*/
+    --sidebar-backround-color: rgba(32,5,20, 0.2);
+    --bit-light-redish-pink: #94003C; /*PRETEND AGAIN PLS*/
+}
+/*END OF VAR CODE*/
+
+body {
+    min-height: 100vh;
+    background-image: ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--dark-red-purple);
+    font-family: 'Raleway ExtraLight', 'Montserrat-Regular', sans-serif;
+    color: var(--red);
+}
+nav {
+    background-color: var(--dark-redish-pink);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--red);
+}
+
+nav a:hover {
+    background-color: var(--darker-redish-pink);
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+/*END OF TOPBAR CODE*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: var(--sidebar-backround-color);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+}
+
+@media(max-width: 800px) {
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+
+@media(max-width: 400px) {
+    .sidebar{
+        width: 100%;
+    }
+}
+/*END OF SIDEBAR CODE*/
+
+.signup-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.box {
+    position: relative;
+    width: 380px;
+    height: 500px;
+    background-color: var(--light-red);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.box form {
+    position: absolute;
+    inset: 1px;
+    background-color: var(--darker-redish-pink);
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.box form h2 {
+    color: var(--red);
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.box form .inputBox {
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+
+.box form .inputBox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: var(--darker-redish-pink);
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.box form .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    color: var(--light-red);
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.box form .inputBox input:valid ~ span,
+.box form .inputBox input:focus ~ span {
+    color: var(--red);
+    font-size: 0.75em;
+    transform: translateY(-34px);
+}
+
+.box form .inputBox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--red);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.box form .inputBox input:valid ~ i,
+.box form .inputBox input:focus ~ i {
+    height: 44px;
+}
+
+.box form .links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box form .links a {
+    margin: 10px 0;
+    font-size: 0.75em;
+    color: var(--red);
+    text-decoration: none;
+}
+
+.box form .links a:hover,
+.box form .links a:nth-child(2) {
+    color: var(--light-red);
+}
+
+.box form input[type="submit"] {
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background-color: var(--dark-redish-pink);
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 125px;
+    margin-top: 10px;
+    color: var(--red);
+}
+
+.box form input[type="submit"]:active {
+    opacity: 0.8;
+}
+/*END OF SIGNUP CODE*/

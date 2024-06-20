@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="signup-style.css">
+</head>
+<body>
+    <nav>
+        <ul class="sidebar">
+            <li><a href="Projects-options.html"><img src="ASSETS/NEO.svg"></a><li>
+            <li onclick=hideSidebar()><a href="#"><img src="ASSETS/CLOSE.svg"></a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="SignIn.html">Sign In</a></li>
+        </ul>
+        <ul>
+            <li><a href="Projects-options.html"><img src="ASSETS/NEO.svg"></a><li>
+            <li class="hideOnMobile"><a href="#">Products</a></li>
+            <li class="hideOnMobile"><a href="index.html">About</a></li>
+            <li class="hideOnMobile"><a href="SignIn.html">Sign In</a></li>
+            <li class="menu-button" onclick=showSidebar() ><a href="#"><img src="ASSETS/MENU.svg"></a></li>
+        </ul>
+    </nav>
+
+    <div class="signup-body">
+        <div class="box">
+            <form>
+                <h2>Sign up</h2>
+                <div class="inputBox">
+                    <input type="email" required="required">
+                    <span>Email</span>
+                    <i></i>
+                </div>
+                <div class="inputBox">
+                    <input type="text" required="required">
+                    <span>Username</span>
+                    <i></i>
+                </div>
+                <div class="inputBox">
+                    <input type="password" required="required">
+                    <span>Password</span>
+                    <i></i>
+                </div>
+                <div class="links">
+                    <a href="SignIn.html">Sign In</a>
+                </div>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>
